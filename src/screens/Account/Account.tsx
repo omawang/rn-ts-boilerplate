@@ -4,20 +4,19 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {RootStackParamList} from '@components';
+import {HomeBottomTabParamList} from 'src/components/Navigation/HomeBottomTabNavigation';
 
-// export type AccountScreenNavigationProps = NativeStackNavigationProp<
-//   RootStackParamList,
-//   'Account'
-// >;
+export type AccountScreenNavigationProps = NativeStackNavigationProp<
+  HomeBottomTabParamList,
+  'Account'
+>;
 
 export const AccountScreen = () => {
-  // const navigation = useNavigation<AccountScreenNavigationProps>();
+  const navigation = useNavigation<AccountScreenNavigationProps>();
 
   return (
     <View>
-      {/* <TouchableOpacity onPress={() => navigation.navigate('Home')}> */}
-        <Text>Ho to Home</Text>
-      {/* </TouchableOpacity> */}
+      <Text style={{fontSize: 20}}>Account screen</Text>
     </View>
   );
 };
