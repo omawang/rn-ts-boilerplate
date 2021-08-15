@@ -3,20 +3,27 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-import {RootStackParamList} from '@components';
+import {HomeStackParamList, RootStackParamList} from '@components';
 
 export type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'Home'
->;
+  'HomeBottomTab'
+> &
+  NativeStackNavigationProp<HomeStackParamList, 'Home'>;
 
 export const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
   return (
     <View>
-      <TouchableOpacity onPress={() => navigation.navigate('Account')}>
-        <Text>Goto Account</Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Login')}
+        style={{marginBottom: 40}}>
+        <Text>Goto Login</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate('ProductDetail')}>
+        <Text>Goto ProductDetail</Text>
       </TouchableOpacity>
     </View>
   );

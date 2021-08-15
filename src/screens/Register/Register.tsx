@@ -5,18 +5,17 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {RootStackParamList} from '@components';
 
-export type AccountScreenNavigationProps = NativeStackNavigationProp<
+export type RegisterScreenNavigationProps = NativeStackNavigationProp<
   RootStackParamList,
-  'Account'
+  'Register'
 >;
 
-export const AccountScreen = () => {
-  const navigation = useNavigation<AccountScreenNavigationProps>();
-
+export const RegisterScreen = () => {
+  const navigation = useNavigation<RegisterScreenNavigationProps>();
   return (
     <View>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Text>Ho to Home</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text>Go to Login</Text>
       </TouchableOpacity>
     </View>
   );
